@@ -5,11 +5,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["ERP", "empresas", "produtos"],
   "author": "Eduardo Rodrigues",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
