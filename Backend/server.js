@@ -1,11 +1,15 @@
 const express = require("express");
+const bodyParser = require('body-parser')
+
 const app = express();
-const port = 8800
+const PORT = 3000;
+
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Eduardo!')
 })
 
-app.listen(port, () => {
-  console.log(`Exemplo de app listado na porta ${port}`)
+app.listen(PORT, () => {
+  console.log(`Exemplo de app listado na porta ${PORT}`)
 })
