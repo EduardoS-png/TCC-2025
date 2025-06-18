@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="../css/pages/login.css">
+    <link rel="icon" type="image/svg+xml"  href="../assets/icons/log-in.svg">
 </head>
 <body>
-    
+     <div class="login-caixa"> 
+        <h2> LOGIN </h2> 
+        <form action="/processar_formulario"method="post"> 
+            <div class= user-caixa> 
+                <input type="text" name="username" required> 
+                <label> Usuário </label> 
+            </div> 
+            <div class="user-caixa"> 
+                <input type="password" name="password" required> 
+                <label> Senha </label> 
+            </div> 
+            <button type="submit"> Entrar </button> 
+        </form> 
+    </div>
 </body>
 </html>
