@@ -1,13 +1,23 @@
-const express = require("express");
-const bodyParser = require('body-parser')
+import express from 'express'
 
 const app = express();
 const PORT = 3000;
 
-app.use(bodyParser.json());
+app.use(express.json())
+
+const usuarios = []
 
 app.get('/', (req, res) => {
   res.send('Eduardo!')
+})
+
+app.get('/login', (req, res) => {
+  res.status(200).json(usuarios)
+})
+
+app.post('/login', (req, res) => {
+  usuarios.push(req.body)
+  res.status(201).json(req.body)
 })
 
 app.listen(PORT, () => {
