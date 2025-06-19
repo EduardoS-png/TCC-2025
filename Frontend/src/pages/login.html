@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="../css/pages/login.css">
     <link rel="icon" type="image/svg+xml"  href="../assets/icons/log-in.svg">
 </head>
-<body>
-     <div class="login-caixa"> 
-        <h2> LOGIN </h2> 
-        <form action="/processar_formulario"method="post"> 
-            <div class= user-caixa> 
-                <input type="text" name="username" required> 
-                <label> Usuário </label> 
-            </div> 
-            <div class="user-caixa"> 
-                <input type="password" name="password" required> 
-                <label> Senha </label> 
-            </div> 
-            <button type="submit"> Entrar </button> 
-        </form> 
-    </div>
+<body> 
+    <form id="login-caixa"> 
+        <h2>Login</h2> 
+        <div class= user-caixa> 
+            <input type="email" id="email" required> 
+            <label>Usuário</label> 
+        </div> 
+        <div class="user-caixa"> 
+            <input type="password" id="senha" required> 
+            <label>Senha</label> 
+        </div> 
+        <button type="submit">Entrar</button> 
+    </form>
+    <p id="mensagem"></p>
+    <script src="../scripts/login.js"></script>
 </body>
 </html>
