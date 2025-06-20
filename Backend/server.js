@@ -1,8 +1,9 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import session from 'express-session'
-import { usuarios } from './users.js'
+import { usuarios } from './utils/users.js'
 import bcrypt from 'bcryptjs'
+import cors from 'cors'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
