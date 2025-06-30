@@ -7,10 +7,11 @@ forms.addEventListener('submit', async (e) => {
     const email = document.getElementById('email').value
     const senha = document.getElementById('senha').value
 
-    const resposta = await fetch('http://127.0.1:3000/login', {
+    const resposta = await fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ email, senha })
+        body: JSON.stringify({ email, senha }),
+        credentials: 'include'
     });
 
     let dados = {};

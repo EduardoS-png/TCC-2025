@@ -15,6 +15,11 @@ const __dirname = path.dirname(__filename);
 
 const caminhoPaginas = path.join(__dirname, './Frontend/src/pages')
 
+app.use(cors({
+  origin: 'http://127.0.0.1:5500',
+  credentials: true
+}));
+
 app.use(express.json())
 
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -27,15 +32,15 @@ app.use(session({
   saveUninitialized: true
 }))
 
-app.use(express.static(caminhoPaginas))
+app.use('/static', express.static(caminhoPaginas));
 
-app.get('/', (req, res) => {
-  if (req.session.usuario) {
+app.get('/home', (req, res) => {
+  if (!req.session.usuario) {
     res.send(`
       <h2>Bem-vindo, ${req.session.usuario.email}!</h2><a href="/logout">Logout</a>
       `)
   } else {
-    res.redirect('/login.html')
+    res.redirect('/static/pages/login.html')
   }
 })
 
