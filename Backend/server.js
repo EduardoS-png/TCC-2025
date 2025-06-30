@@ -40,7 +40,7 @@ app.get('/home', (req, res) => {
       <h2>Bem-vindo, ${req.session.usuario.email}!</h2><a href="/logout">Logout</a>
       `)
   } else {
-    res.redirect('/static/pages/login.html')
+    res.redirect('Frontend/src/pages/login.html')
   }
 })
 
