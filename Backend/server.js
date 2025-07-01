@@ -13,7 +13,7 @@ const PORT = 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const caminhoPaginas = path.join(__dirname, './Frontend/src/pages')
+const caminhoPaginas = path.join(__dirname, '../Frontend/src/pages')
 
 app.use(cors({
   origin: 'http://127.0.0.1:5500',
@@ -32,15 +32,16 @@ app.use(session({
   saveUninitialized: true
 }))
 
-app.use('/static', express.static(caminhoPaginas));
+app.use(express.static(caminhoPaginas));
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
   if (!req.session.usuario) {
-    res.send(`
-      <h2>Bem-vindo, ${req.session.usuario.email}!</h2><a href="/logout">Logout</a>
-      `)
+    return res.redirect('/pages/login.html');
   } else {
-    res.redirect('Frontend/src/pages/login.html')
+    res.send(`
+    <h2>Bem-vindo, ${req.session.usuario.email}!</h2>
+    <a href="/logout">Logout</a>
+  `);
   }
 })
 
@@ -55,6 +56,13 @@ app.post('/login', (req, res) => {
     return res.status(401).json({ sucesso: false, mensagem: 'Usuário ou senha inválidos'})
   }
 })
+
+app.get('/usuario', (req, res) => {
+  if (!req.session.usuario) {
+    return res.status(401).json({ erro: 'Não autenticado' });
+  }
+  res.json({ email: req.session.usuario.email });
+});
 
 app.get('/logout', (req, res) => {
   req.session.destroy(() => {

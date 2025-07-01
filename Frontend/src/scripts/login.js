@@ -1,32 +1,30 @@
-const forms = document.getElementById('login-caixa')
-const mensagem = document.getElementById('mensagem')
+const forms = document.getElementById('login-caixa');
+const mensagem = document.getElementById('mensagem');
 
 forms.addEventListener('submit', async (e) => {
-    e.preventDefault()
+  e.preventDefault();
 
-    const email = document.getElementById('email').value
-    const senha = document.getElementById('senha').value
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
 
+  try {
     const resposta = await fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ email, senha }),
-        credentials: 'include'
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ email, senha })
     });
 
-    let dados = {};
+    const dados = await resposta.json();
 
-    try {
-        const texto = await resposta.text();
-        dados = texto ? JSON.parse(texto) : {};
-    } catch (erro) {
-        console.error('Erro ao tentar ler JSON:', erro);
-    }
-
-    if(dados.sucesso) {
-        window.location.href = '/'
+    if (dados.sucesso) {
+      window.location.href = '/pages/painel.html'; // redireciona para o novo painel
     } else {
-        mensagem.textContent = dados.mensagem
-        mensagem.style.color = '#ff3337'
+      mensagem.textContent = dados.mensagem;
+      mensagem.style.color = 'red';
     }
-})
+  } catch (erro) {
+    mensagem.textContent = 'Erro de conexão com o servidor.';
+    mensagem.style.color = 'red';
+  }
+});
