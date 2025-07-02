@@ -1,2 +1,2 @@
 # TCC-2025
-Projeto exclusivamente restrito apenas para os membros da equipe do TCC (Irmãs e CIA)
+Projeto TCC (Trabalho de conclusão de curso) para concluir no curso técnico de Desenvolvimento de sistemas
