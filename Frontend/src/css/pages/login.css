@@ -3,7 +3,7 @@ body{
     padding: 0; 
     background: linear-gradient(-45deg,#2100ff,#0846ff,#ababc4,#ff3337,#eb0000); 
     background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
+    animation: gradienteMovimento 10s ease infinite;
     height: 100vh; 
     display: flex; 
     justify-content: center; 
@@ -11,7 +11,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 } 
 
-@keyframes gradientMove {
+@keyframes gradienteMovimento {
     0% {
         background-position: 0% 50%;
     }
@@ -27,7 +27,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    font-size: 3rem;
+    font-size: 2rem;
 }
  
 #login-caixa{ 
@@ -37,19 +37,16 @@ h2 {
     box-shadow: 0 15px 25px rgba(0,0,0,0,5); 
     width: 400px; 
     height: 400px;
-} 
- 
-#login-caixa { 
     text-align: center; 
     color:  #808080 ; 
     margin-bottom: 20px;
-} 
+}
  
 .user-caixa { 
     position: relative; 
 } 
  
-.user-caixa #email, #senha{ 
+.user-caixa #email, #senha, #status{ 
     width: 100%; 
     padding: 0.625rem 0; 
     font-size: 15px; 

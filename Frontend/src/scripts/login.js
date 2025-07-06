@@ -12,19 +12,19 @@ forms.addEventListener('submit', async (e) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
-      body: JSON.stringify({ email, senha })
+      body: JSON.stringify({ email, senha, estado })
     });
 
     const dados = await resposta.json();
 
     if (dados.sucesso) {
-      window.location.href = '/pages/painel.html'; // redireciona para o novo painel
+      window.location.href = '/pages/painelControle.html'; // redireciona para o novo painel
     } else {
       mensagem.textContent = dados.mensagem;
       mensagem.style.color = 'red';
     }
   } catch (erro) {
     mensagem.textContent = 'Erro de conexão com o servidor.';
-    mensagem.style.color = 'red';
+    mensagem.style.color = '#990000';
   }
 });
