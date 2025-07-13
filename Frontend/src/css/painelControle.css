@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+
 :root {
   --cor-primaria: #2100ff;
   --cor-secundaria: #eb0000;
@@ -30,6 +32,7 @@ body {
   min-height: 100vh;
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
+  font-family: "Merriweather", serif;
 }
 
 header {
@@ -52,15 +55,15 @@ header {
 #logoIcone {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 2rem;
+  height: 2rem;
   background-color: var(--cor-fundo);
   border-radius: var(--raio-borda);
 }
 
 #tituloPrincipal {
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 100;
   color: var(--corTexto-inversa);
 }
 
@@ -98,8 +101,8 @@ header {
 }
 
 .avatarUsuario {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   background-color: var(--cor-fundo);
   overflow: hidden;
@@ -161,8 +164,8 @@ nav {
 }
 
 .navLink em {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   display: grid;
   place-items: center;
   color: currentColor;
@@ -236,8 +239,52 @@ main {
   color: var(--cor-terciaria);
 }
 
+.calendario {
+  background: white;
+  border-radius: var(--raio-borda);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--sombra-pequena);
+}
+
+.sessaoTitulo {
+  margin-top: 1rem;
+}
+
 .acoesRapidas {
   margin: 1.5rem 0;
+  color: var(--cor-texto);
+}
+
+.abas {
+  display: flex;
+  border-bottom: 1px solid var(--cor-fundo);
+  margin-top: 1rem;
+}
+
+.aba {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  color: var(--cor-terciaria);
+  font-size: 14px;
+}
+
+.aba.ativa {
+  color: var(--cor-apoio1);
+  font-weight: 500;
+}
+
+.aba.ativa::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--cor-primaria);
 }
 
 .acoesBotoes {
@@ -264,12 +311,112 @@ main {
   color: var(--corTexto-inversa);
 }
 
-.calendario {
+.atividadesRecentes {
   background: white;
   border-radius: var(--raio-borda);
-  padding: 1rem;
-  margin-bottom: 1.5rem;
   box-shadow: var(--sombra-pequena);
+  padding: 1.5rem;
+}
+
+.sessaoCabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.verTudo {
+  font-size: 14px;
+  color: var(--cor-primaria);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.filtrarOpcoes {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+#filtroSelecionar {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-terciaria);
+  background: white;
+}
+
+#dataFiltro {
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-terciaria);
+}
+
+.listaAtividade {
+  margin-top: 1rem;
+  max-height: 25rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.listaAtividade::-webkit-scrollbar {
+  width: 6px;
+}
+
+.listaAtividade::-webkit-scrollbar-track {
+  background-color: var(--cor-terciaria);
+  border-radius: 3px;
+}
+.listaAtividade::-webkit-scrollbar-thumb {
+  background: var(--cor-apoio2);
+  border-radius: 3px;
+}
+
+.listaAtividade::-webkit-scrollbar-thumb:hover {
+  background: var(--cor-apoio1);
+}
+
+.atividadeItem {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid;
+  transition: var(--transicao);
+  border-radius: var(--raio-borda);
+}
+
+.atividadeItem:hover {
+  background-color: var(--cor-terciaria);
+  color: var(--corTexto-inversa);
+  transform: translateX(2px);
+}
+
+.iconeAtividade {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--cor-fundo);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.caixaAtividade {
+  flex: 1;
+}
+
+.tituloAtividade {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.tempoAtividade {
+  font-size: 12px;
+  color: var(--cor-terciaria);
+}
+
+.tempoAtividade:hover {
+  color: var(--corTexto-inversa);
 }
 
 footer {
@@ -281,4 +428,27 @@ footer {
   align-items: center;
   font-size: 14px;
   color: var(--cor-terciaria);
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 50px;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+  nav {
+    position: fixed;
+    top: 70px;
+    left: -15rem;
+    width: 15rem;
+    height: calc(100vh - 70px);
+    transition: var(--transicao);
+    z-index: 100;
+  }
+  nav.ativo {
+    left: 0;
+  }
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tudo no controle</title>
+    <link rel="stylesheet" href="../css/fontes.css" />
     <link rel="stylesheet" href="../css/painelControle.css" />
   </head>
   <body>
@@ -62,12 +63,12 @@
     </nav>
 
     <main>
-      <div class="cabecalhoPagina">
+      <section class="cabecalhoPagina">
         <h1 class="paginaTitulo">Dashboard</h1>
         <div class="subtitulo">Início / Dashboard</div>
-      </div>
+      </section>
 
-      <div class="dashboardGrid">
+      <section class="dashboardGrid">
         <div class="cartao">
           <div class="cabecalhoCartao">
             <h3 class="tituloCartao">Vendas Hoje</h3>
@@ -100,14 +101,19 @@
           <div class="valorCartao">14</div>
           <div class="descricaoCartao">+7 novos esta semana</div>
         </div>
-      </div>
+      </section>
 
-      <div class="calendario">
+      <section class="calendario">
         <h3 class="sessaoTitulo">Calendário</h3>
         <div class="diasCalendario"></div>
-      </div>
+      </section>
 
-      <div class="acoesRapidas">
+      <section class="acoesRapidas">
+        <div class="abas">
+          <button class="aba ativa">Operações</button>
+          <button class="aba">Relatórios</button>
+        </div>
+
         <h3 class="sessaoTitulo">Ações Rápidas</h3>
         <div class="acoesBotoes">
           <button class="acaoBotao">
@@ -123,7 +129,84 @@
             Relatório Diário
           </button>
         </div>
-      </div>
+      </section>
+
+      <section class="atividadesRecentes">
+        <div class="sessaoCabecalho">
+          <h2 class="paginaTitulo">Atividades Recentes</h2>
+          <div class="verTudo">Ver Tudo</div>
+        </div>
+
+        <div class="filtrarOpcoes">
+          <select id="filtroSelecionar">
+            <option value="#">Todas Atividades</option>
+            <option value="Estoque">Estoque</option>
+            <option value="Compras">Compras</option>
+            <option value="Vendas">Vendas</option>
+            <option value="Sistema">Sistema</option>
+          </select>
+          <input type="date" id="dataFiltro" />
+        </div>
+
+        <div class="listaAtividade">
+          <div class="atividadeItem">
+            <div class="iconeAtividade">👤</div>
+            <div class="caixaAtividade">
+              <h4 class="tituloAtividade">Novo cliente cadastrado</h4>
+              <p>Empresa Cardoso LTDA. foi cadastrada no sistema</p>
+              <p class="tempoAtividade">10 minutos atrás</p>
+            </div>
+          </div>
+          <div class="atividadeItem">
+            <div class="iconeAtividade">💰</div>
+            <div class="caixaAtividade">
+              <h4 class="tituloAtividade">Pedido faturado</h4>
+              <p>Pedido #2045 no valor de R$ 7.890,00</p>
+              <p class="tempoAtividade">1 hora atrás</p>
+            </div>
+          </div>
+          <div class="atividadeItem">
+            <div class="iconeAtividade">💰</div>
+            <div class="caixaAtividade">
+              <h4 class="tituloAtividade">Pedido faturado</h4>
+              <p>Pedido #2045 no valor de R$ 7.890,00</p>
+              <p class="tempoAtividade">1 hora atrás</p>
+            </div>
+          </div>
+          <div class="atividadeItem">
+            <div class="iconeAtividade">💰</div>
+            <div class="caixaAtividade">
+              <h4 class="tituloAtividade">Pedido faturado</h4>
+              <p>Pedido #2045 no valor de R$ 7.890,00</p>
+              <p class="tempoAtividade">1 hora atrás</p>
+            </div>
+          </div>
+          <div class="atividadeItem">
+            <div class="iconeAtividade">💰</div>
+            <div class="caixaAtividade">
+              <h4 class="tituloAtividade">Pedido faturado</h4>
+              <p>Pedido #2045 no valor de R$ 7.890,00</p>
+              <p class="tempoAtividade">1 hora atrás</p>
+            </div>
+          </div>
+          <div class="atividadeItem">
+            <div class="iconeAtividade">💰</div>
+            <div class="caixaAtividade">
+              <h4 class="tituloAtividade">Pedido faturado</h4>
+              <p>Pedido #2045 no valor de R$ 7.890,00</p>
+              <p class="tempoAtividade">1 hora atrás</p>
+            </div>
+          </div>
+          <div class="atividadeItem">
+            <div class="iconeAtividade">💰</div>
+            <div class="caixaAtividade">
+              <h4 class="tituloAtividade">Pedido faturado</h4>
+              <p>Pedido #2045 no valor de R$ 7.890,00</p>
+              <p class="tempoAtividade">1 hora atrás</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
