@@ -1,7 +1,7 @@
 :root {
   --cor-primaria: #2100ff;
   --cor-secundaria: #eb0000;
-  --cor-terciaria: #9191aa;
+  --cor-terciaria: #707085;
   --cor-apoio1: #104bfd;
   --cor-apoio2: #ff3337;
   --cor-fundo: #f9fafb;
@@ -68,6 +68,12 @@ header {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.nomeUsuario {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--corTexto-inversa);
 }
 
 .caixaPesquisa {
@@ -149,10 +155,130 @@ nav {
   border-left: 4px solid var(--cor-primaria);
 }
 
+.navLink.ativo:hover {
+  color: var(--corTexto-inversa);
+  background-color: var(--cor-apoio1);
+}
+
 .navLink em {
   width: 24px;
   height: 24px;
   display: grid;
   place-items: center;
   color: currentColor;
+}
+
+.fecharNav {
+  display: none;
+}
+
+main {
+  grid-area: main;
+  padding: 1.5rem;
+}
+
+.cabecalhoPagina {
+  margin-bottom: 1.5rem;
+}
+
+.paginaTitulo {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--cor-texto);
+}
+
+.subtitulo {
+  color: var(--cor-texto);
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cartao {
+  background: white;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-pequena);
+  padding: 1.5rem;
+  transition: var(--transicao);
+}
+
+.cartao:hover {
+  box-shadow: var(--sombra-media);
+  transform: translateY(-5px);
+}
+
+.cabecalhoCartao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tituloCartao {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cor-texto);
+}
+
+.valorCartao {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.descricaoCartao {
+  font-size: 14px;
+  color: var(--cor-terciaria);
+}
+
+.acoesRapidas {
+  margin: 1.5rem 0;
+}
+
+.acoesBotoes {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.acaoBotao {
+  padding: 0.75rem 1rem;
+  background: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: var(--raio-borda);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.acaoBotao:hover {
+  background: var(--cor-apoio1);
+  color: var(--corTexto-inversa);
+}
+
+.calendario {
+  background: white;
+  border-radius: var(--raio-borda);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--sombra-pequena);
+}
+
+footer {
+  grid-area: footer;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: var(--cor-terciaria);
 }
