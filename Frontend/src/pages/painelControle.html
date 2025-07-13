@@ -4,29 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tudo no controle</title>
+    <link rel="stylesheet" href="../css/painelControle.css" />
   </head>
   <body>
-    <-- Sidebar --!>
-    <header style="background-color: aqua">
+    <header>
       <div class="logo-container">
-        <button id="acessoNav"><img src="" alt=""></button>
-        <img id="logoIcone" src="" alt="" />
-        <h1 id="titulo">Tudo no Controle</h1>
+        <button id="acessoNav">
+          <img src="../assets/icons/menu.svg" alt="" />
+        </button>
+        <img id="logoIcone" src="" alt="#" />
+        <h1 id="tituloPrincipal">Tudo no Controle</h1>
       </div>
       <div class="perfilUsuario">
         <div class="caixaPesquisa">
-          <input type="text" placeholder="O que procura...">
+          <input type="text" placeholder="O que procura..." />
           <span class="iconePesquisa">🔍</span>
         </div>
         <span class="nomeUsuario">Admin</span>
         <div class="avatarUsuario">
-          <img src="" alt="">
+          <img src="" alt="" />
         </div>
       </div>
     </header>
 
-    <-- Navbar --!>
-    <nav style="background-color: blue">estudar</nav>
+    <nav>
+      <div class="navSessao">
+        <div class="navTitulo">Principal</div>
+        <a href="#" class="navLink ativo">
+          <em>📊</em>
+          <span>Dashboard</span>
+        </a>
+      </div>
+
+      <div class="navSessao">
+        <div class="navTitulo">Operacional</div>
+        <a href="#" class="navLink">
+          <em>🧾</em>
+          <span>Compras</span>
+        </a>
+        <a href="#" class="navLink">
+          <em>💰</em>
+          <span>Vendas</span>
+        </a>
+        <a href="#" class="navLink">
+          <em>📦</em>
+          <span>Estoque</span>
+        </a>
+      </div>
+
+      <div class="navSessao">
+        <div class="navTitulo">Relátorios</div>
+        <a href="#" class="navLink">
+          <em>📈</em>
+          <span>Analíticos</span>
+        </a>
+      </div>
+    </nav>
 
     <main></main>
 
