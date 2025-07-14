@@ -33,6 +33,18 @@ body {
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
   font-family: "Merriweather", serif;
+  transition: grid-template-columns 0.3s ease;
+}
+
+body.navFechada {
+  grid-template-columns: 0px 1fr;
+}
+
+body.navFechada nav {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 header {
@@ -52,6 +64,13 @@ header {
   gap: 0.75rem;
 }
 
+#acessoNav {
+  all: unset;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 #logoIcone {
   display: grid;
   place-items: center;
@@ -63,7 +82,7 @@ header {
 
 #tituloPrincipal {
   font-size: 24px;
-  font-weight: 100;
+  font-weight: 400;
   color: var(--corTexto-inversa);
 }
 
@@ -75,7 +94,7 @@ header {
 
 .nomeUsuario {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--corTexto-inversa);
 }
 
@@ -122,6 +141,7 @@ nav {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  transition: width 0.3s ease, opacity 0.3s ease;
 }
 
 .navSessao {
@@ -169,10 +189,6 @@ nav {
   display: grid;
   place-items: center;
   color: currentColor;
-}
-
-.fecharNav {
-  display: none;
 }
 
 main {
@@ -272,12 +288,12 @@ main {
   font-size: 14px;
 }
 
-.aba.ativa {
+.aba.ativo {
   color: var(--cor-apoio1);
   font-weight: 500;
 }
 
-.aba.ativa::after {
+.aba.ativo::after {
   content: "";
   position: absolute;
   bottom: -1px;
