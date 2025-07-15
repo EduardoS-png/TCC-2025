@@ -623,116 +623,74 @@ footer {
   color: var(--cor-terciaria);
 }
 
-#modalCadastroProduto {
-  position: fixed;
-  display: grid;
-  place-items: center;
-  width: 100%;
-  max-width: 480px;
-  background: white;
+dialog {
+  padding: 2rem;
   border: none;
   border-radius: var(--raio-borda);
   box-shadow: var(--sombra-media);
-  padding: 1.5rem;
-  z-index: 999;
+  background: white;
+  width: 100%;
+  max-width: 32rem;
+  margin: auto;
+  color: var(--cor-texto);
+  transition: var(--transicao);
+  animation: surgirModel 0.3s ease forwards;
 }
 
-#modalCadastroProduto::backdrop {
-  background-color: rgba(0, 0, 0, 0.4);
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
 }
 
-#modalCadastroProduto form {
+.modalCabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form#formCadastroProduto {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-#modalCadastroProduto header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-#modalCadastroProduto h2 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111827;
-}
-
-#btnFecharModalProduto {
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  color: #6b7280;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-#btnFecharModalProduto:hover {
-  color: #111827;
-}
-
-#modalCadastroProduto label {
+form#formCadastroProduto label {
+  font-weight: 500;
   font-size: 14px;
-  color: #374151;
-  margin-bottom: 0.25rem;
 }
 
-#modalCadastroProduto input,
-#modalCadastroProduto select,
-#modalCadastroProduto textarea {
-  padding: 0.6rem 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
+form#formCadastroProduto input,
+form#formCadastroProduto select {
+  padding: 0.6rem 1rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid #ccc;
   font-size: 14px;
-  background-color: #f9fafb;
-  transition: border 0.2s;
+  transition: var(--transicao);
 }
 
-#modalCadastroProduto input:focus,
-#modalCadastroProduto select:focus,
-#modalCadastroProduto textarea:focus {
+form#formCadastroProduto input:focus,
+form#formCadastroProduto select:focus {
+  border-color: var(--cor-primaria);
   outline: none;
-  border-color: #3b82f6;
-  background: white;
+  box-shadow: 0 0 0 2px rgba(43, 18, 207, 0.1);
 }
 
-#modalCadastroProduto select:invalid {
-  color: #9ca3af;
+#btnFecharModal {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--cor-terciaria);
+  cursor: pointer;
+  transition: var(--transicao);
 }
 
-#modalCadastroProduto menu {
+#btnFecharModal:hover {
+  color: var(--cor-secundaria);
+}
+
+menu {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: flex-end;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-#modalCadastroProduto button {
-  padding: 0.6rem 1.2rem;
-  font-size: 14px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-#modalCadastroProduto .botaoPrimario {
-  background: #3b82f6;
-  color: white;
-}
-
-#modalCadastroProduto .botaoPrimario:hover {
-  background: #2563eb;
-}
-
-#modalCadastroProduto .botaoSecundario {
-  background: #e5e7eb;
-  color: #374151;
-}
-
-#modalCadastroProduto .botaoSecundario:hover {
-  background: #d1d5db;
+  gap: 1rem;
 }
