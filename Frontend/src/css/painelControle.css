@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
 
 :root {
-  --cor-primaria: #2100ff;
+  --cor-primaria: #2b12cf;
   --cor-secundaria: #eb0000;
   --cor-terciaria: #707085;
-  --cor-apoio1: #104bfd;
+  --cor-apoio1: #1248eb;
   --cor-apoio2: #ff3337;
   --cor-fundo: #f9fafb;
   --cor-texto: #1f2937;
@@ -82,7 +82,7 @@ header {
 
 #tituloPrincipal {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 700;
   color: var(--corTexto-inversa);
 }
 
@@ -115,6 +115,8 @@ header {
 }
 
 .iconePesquisa {
+  all: unset;
+  margin-top: 0.25rem;
   margin-left: 0.5rem;
   cursor: pointer;
 }
@@ -309,7 +311,7 @@ main {
   margin-top: 0.75rem;
 }
 
-.acaoBotao {
+.botaoPrimario {
   padding: 0.75rem 1rem;
   background: var(--cor-primaria);
   color: white;
@@ -322,8 +324,26 @@ main {
   transition: var(--transicao);
 }
 
-.acaoBotao:hover {
+.botaoPrimario:hover {
   background: var(--cor-apoio1);
+  color: var(--corTexto-inversa);
+}
+
+.botaoSecundario {
+  padding: 0.75rem 1rem;
+  background: var(--cor-terciaria);
+  color: white;
+  border: none;
+  border-radius: var(--raio-borda);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.botaoSecundario:hover {
+  background: var(--cor-apoio2);
   color: var(--corTexto-inversa);
 }
 
@@ -354,7 +374,7 @@ main {
   margin-bottom: 1rem;
 }
 
-#filtroSelecionar {
+.filtroSelecionar {
   padding: 0.25rem 0.75rem;
   border-radius: var(--raio-borda);
   border: 1px solid var(--cor-terciaria);
@@ -422,6 +442,7 @@ main {
 }
 
 .tituloAtividade {
+  color: var(--cor-texto);
   font-weight: 500;
   margin-bottom: 0.25rem;
 }
@@ -433,6 +454,93 @@ main {
 
 .tempoAtividade:hover {
   color: var(--corTexto-inversa);
+}
+
+.inventarioCabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.caixaInventario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inventarioSurmario {
+  display: flex;
+  gap: 1rem;
+}
+
+.sumarioEstado {
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-pequena);
+  text-align: center;
+}
+
+.sumarioEstado strong {
+  display: block;
+  font-size: 18px;
+  margin-top: 0.4rem;
+}
+
+.sumarioEstado.total {
+  border-left: 4px solid var(--cor-primaria);
+}
+
+.sumarioEstado.alerta {
+  border-left: 4px solid #f59e0b;
+}
+
+.sumarioEstado.perigo {
+  border-left: 4px solid var(--cor-secundaria);
+}
+
+.controlesInventario {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.pesquisaInvetario {
+  margin-left: auto;
+  display: flex;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--raio-borda);
+  overflow: hidden;
+}
+
+.pesquisaInvetario input {
+  border: none;
+  padding: 0.625rem 0.75rem;
+  outline: none;
+  min-width: 15.5rem;
+}
+
+.pesquisaBotao {
+  border: none;
+  background-color: var(--cor-apoio2);
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+.tabelaInventario {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: var(--raio-borda);
+  overflow: hidden;
+  box-shadow: var(--sombra-pequena);
+}
+
+.tabelaInventario th, .tabelaInventario td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: middle;
 }
 
 footer {

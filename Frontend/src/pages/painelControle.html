@@ -19,7 +19,9 @@
       <div class="perfilUsuario">
         <div class="caixaPesquisa">
           <input type="text" placeholder="O que procura..." />
-          <span class="iconePesquisa">🔍</span>
+          <button class="iconePesquisa">
+            <img src="../assets/icons/pesquisar.svg" alt="iconePesquisa" />
+          </button>
         </div>
         <span class="nomeUsuario">Matheus Cardoso</span>
         <div class="avatarUsuario">
@@ -32,7 +34,7 @@
       <div class="navSessao">
         <div class="navTitulo">Principal</div>
         <a href="#" class="navLink ativo" data-destino="dashboard">
-          <em>📊</em>
+          <img src="../assets/icons/dashboard.svg" alt="dashboard" />
           <span>Dashboard</span>
         </a>
       </div>
@@ -40,23 +42,27 @@
       <div class="navSessao">
         <div class="navTitulo">Operacional</div>
         <a href="#" class="navLink" data-destino="compras">
-          <em>🧾</em>
+          <img src="../assets/icons/compras.svg" alt="" />
           <span>Compras</span>
         </a>
         <a href="#" class="navLink" data-destino="vendas">
-          <em>💰</em>
+          <img src="../assets/icons/carrinho.svg" alt="" />
           <span>Vendas</span>
         </a>
-        <a href="../pages/estoque.html" class="navLink" data-destino="estoque">
-          <em>📦</em>
-          <span>Estoque</span>
+        <a
+          href="../pages/estoque.html"
+          class="navLink"
+          data-destino="inventario"
+        >
+          <img src="../assets/icons/estoque.svg" alt="estoque" />
+          <span>Inventário</span>
         </a>
       </div>
 
       <div class="navSessao">
         <div class="navTitulo">Relátorios</div>
         <a href="#" class="navLink" data-destino="analiticos">
-          <em>📈</em>
+          <img src="../assets/icons/relatorio.svg" alt="relatório" />
           <span>Analíticos</span>
         </a>
       </div>
@@ -66,15 +72,15 @@
       <!-- DashBoard-->
       <section id="dashboard">
         <div class="cabecalhoPagina">
-          <h1 class="paginaTitulo">Dashboard</h1>
-          <div class="subtitulo">Início / Dashboard</div>
+          <h2 class="paginaTitulo">Dashboard</h2>
+          <p class="subtitulo">Início / Dashboard</p>
         </div>
         <div class="dashboardGrid">
           <div class="cartao">
             <div class="cabecalhoCartao">
               <h3 class="tituloCartao">Vendas Hoje</h3>
               <div class="iconeCartao">
-                <span>💰</span>
+                <img src="../assets/icons/vendas.svg" alt="vendas" />
               </div>
             </div>
             <div class="valorCartao">R$ 45.237,89</div>
@@ -84,7 +90,7 @@
             <div class="cabecalhoCartao">
               <h3 class="tituloCartao">Pedidos Pendentes</h3>
               <div class="iconeCartao">
-                <span>❗</span>
+                <img src="../assets/icons/alerta.svg" alt="alerta" />
               </div>
             </div>
             <div class="valorCartao">25</div>
@@ -94,7 +100,7 @@
             <div class="cabecalhoCartao">
               <h3 class="tituloCartao">Novos fornecedores</h3>
               <div class="iconeCartao">
-                <span>👥</span>
+                <img src="../assets/icons/pessoas.svg" alt="pessoas" />
               </div>
             </div>
             <div class="valorCartao">14</div>
@@ -107,21 +113,25 @@
         </div>
         <div class="acoesRapidas">
           <div class="abas">
-            <button class="aba ativa">Operações</button>
+            <button class="aba ativo">Operações</button>
             <button class="aba">Relatórios</button>
           </div>
           <h3 class="sessaoTitulo">Ações Rápidas</h3>
           <div class="acoesBotoes">
-            <button class="acaoBotao">
+            <button class="botaoPrimario">
               <span class="acaoIcone">➕</span>
               Novos Pedidos
             </button>
-            <button class="acaoBotao">
-              <span class="acaoIcone">👤</span>
+            <button class="botaoPrimario">
+              <span class="acaoIcone"
+                ><img src="../assets/icons/pessoas.svg" alt="pessoas"
+              /></span>
               Novos Clientes
             </button>
-            <button class="acaoBotao">
-              <span class="acaoIcone">📋</span>
+            <button class="botaoPrimario">
+              <span class="acaoIcone"
+                ><img src="../assets/icons/relatorio.svg" alt="relatório"
+              /></span>
               Relatório Diário
             </button>
           </div>
@@ -132,7 +142,7 @@
             <div class="verTudo">Ver Tudo</div>
           </div>
           <div class="filtrarOpcoes">
-            <select id="filtroSelecionar">
+            <select class="filtroSelecionar">
               <option value="#">Todas Atividades</option>
               <option value="Estoque">Estoque</option>
               <option value="Compras">Compras</option>
@@ -203,21 +213,72 @@
       </section>
 
       <!-- Estoque -->
-      <section id="estoque" style="display: none">
-        <h1 class="paginaTitulo">Controle de Estoque</h1>
-        <p>Aqui ficará o gerenciamento de produtos, entradas e saídas.</p>
-
-        <div class="dashboardGrid">
-          <div class="cartao">
-            <h3 class="tituloCartao">Produto A</h3>
-            <p class="descricaoCartao">Estoque: 25 unidades</p>
-          </div>
-
-          <div class="cartao">
-            <h3 class="tituloCartao">Produto B</h3>
-            <p class="descricaoCartao">Estoque: 12 unidades</p>
+      <section id="inventario" style="display: none">
+        <div class="inventarioCabecalho">
+          <div class="caixaInventario">
+            <h2 class="paginaTitulo">Inventário</h2>
+            <div class="inventarioSurmario">
+              <div class="sumarioEstado total">
+                <span>Produtos Totais</span>
+                <strong>287</strong>
+              </div>
+              <div class="sumarioEstado alerta">
+                <span>Baixo Estoque</span>
+                <strong>23</strong>
+              </div>
+              <div class="sumarioEstado perigo">
+                <span>Em Falta</span>
+                <strong>6</strong>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="controlesInventario">
+          <button class="botaoPrimario">
+            <img src="" alt="" />Novo Produto
+          </button>
+          <button class="botaoSecundario"><img src="" alt="" />Entrada</button>
+          <button class="botaoSecundario"><img src="" alt="" />Saída</button>
+          <div class="pesquisaInvetario">
+            <input type="text" placeholder="Buscar produtos..." />
+            <button class="pesquisaBotao">
+              <img src="../assets/icons/pesquisar.svg" alt="iconePesquisa" />
+            </button>
+          </div>
+        </div>
+
+        <table class="tabelaInventario">
+          <thead>
+            <tr class="tabelaCabecalho">
+              <th class="cabecaColuna">Código</th>
+              <th class="cabecaColuna">Produto</th>
+              <th class="cabecaColuna">Quantidade</th>
+              <th class="cabecaColuna">Localização</th>
+              <th class="cabecaColuna">Status</th>
+              <th class="cabecaColuna">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="linhaTabela">
+              <td class="tabelaColuna">PROD001</td>
+              <td class="tabelaColuna">Notebook Dell</td>
+              <td class="tabelaColuna">15</td>
+              <td class="tabelaColuna">Prateleira A3</td>
+              <td class="tabelaColuna">
+                <span class="status-badge in-stock">Em Estoque</span>
+              </td>
+              <td class="tabelaColuna acoes">
+                <button class="botoesDecisao editar" title="Editar">
+                  <img src="" alt="" />
+                </button>
+                <button class="botoesDecisao apagar" title="Excluir">
+                  <img src="" alt="" />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
 
