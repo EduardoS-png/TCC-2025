@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tudo no controle</title>
-    <link rel="stylesheet" href="../css/fontes.css" />
     <link rel="stylesheet" href="../css/painelControle.css" />
+    <link rel="stylesheet" href="../css/animacoesPainel.css" />
+    <link rel="stylesheet" href="../css/painelControleRes.css" />
   </head>
   <body>
+    <!-- Cabeçalho -->
     <header>
       <div class="logo-container">
         <button id="acessoNav">
@@ -30,6 +32,7 @@
       </div>
     </header>
 
+    <!-- Barra de navegação -->
     <nav>
       <div class="navSessao">
         <div class="navTitulo">Principal</div>
@@ -68,6 +71,7 @@
       </div>
     </nav>
 
+    <!-- Contúdo Principal -->
     <main>
       <!-- DashBoard-->
       <section id="dashboard">
@@ -231,7 +235,7 @@
         </div>
 
         <div class="controlesInventario">
-          <button class="botaoPrimario">
+          <button type="submit" id="botaoAbrirModal" class="botaoPrimario">
             <img src="../assets/icons/novo.svg" alt="" />Novo Produto
           </button>
           <button class="botaoSecundario"><img src="" alt="" />Entrada</button>
@@ -303,9 +307,123 @@
       </section>
     </main>
 
+    <!-- Rodapé -->
     <footer>
       <p>Tudo no Controle © 2025 - Versão 1.0.0</p>
     </footer>
+
+    <!-- Modal para o cadastro de produtos -->
+    <dialog
+      id="modalCadastroProduto"
+      aria-labelledby="tituloModalCadastro"
+      aria-modal="true"
+      role="dialog"
+    >
+      <form id="formCadastroProduto" method="POST">
+        <header class="modalCabecalho">
+          <h2 class="paginaTitulo">Cadastrar Produto</h2>
+          <button
+            type="button"
+            aria-label="Fechar formulário"
+            id="botaoFecharModal"
+            class="botaoFecharModal"
+          >
+            ×
+          </button>
+        </header>
+
+        <!-- Tipo do Produto -->
+        <label for="tipoProduto">Tipo de Produto</label>
+        <select id="tipoProduto" name="tipo" required>
+          <option value="" disabled selected>Selecione</option>
+          <option value="linha">Linha</option>
+          <option value="tecido">Tecido</option>
+          <option value="adicional">Produto Adicional</option>
+        </select>
+
+        <!-- Formulário para Linhas -->
+        <div class="grupoFormulario" id="formLinha" hidden>
+          <label for="nomeLinha">Nome da Linha</label>
+          <input type="text" name="nome_linha" id="nomeLinha" />
+
+          <label for="corLinha">Cor</label>
+          <input type="text" name="cor_linha" id="corLinha" />
+
+          <label for="espessuraLinha">Espessura (ex: 120, 60)</label>
+          <input type="text" name="espessura" id="espessuraLinha" />
+
+          <label for="marcaLinha">Marca</label>
+          <input type="text" name="marca_linha" id="marcaLinha" />
+
+          <label for="quantidadeLinha">Quantidade (unidades)</label>
+          <input
+            type="number"
+            name="quantidade_linha"
+            id="quantidadeLinha"
+            min="0"
+          />
+        </div>
+
+        <!-- Formulário para Tecidos -->
+        <div class="grupoFormulario" id="formTecido" hidden>
+          <label for="nomeTecido">Nome do Tecido</label>
+          <input type="text" name="nome_tecido" id="nomeTecido" />
+
+          <label for="tipoTecido">Tipo (ex: algodão, poliéster)</label>
+          <input type="text" name="tipo_tecido" id="tipoTecido" />
+
+          <label for="corTecido">Cor</label>
+          <input type="text" name="cor_tecido" id="corTecido" />
+
+          <label for="composicaoTecido">Composição</label>
+          <input type="text" name="composicao" id="composicaoTecido" />
+
+          <label for="metragemTecido">Metragem disponível</label>
+          <input
+            type="number"
+            name="metragem"
+            id="metragemTecido"
+            step="0.1"
+            min="0"
+          />
+        </div>
+
+        <!-- Formulário para Produtos Adicionais -->
+        <div class="grupoFormulario" id="formAdicional" hidden>
+          <label for="nomeAdicional">Nome do Produto</label>
+          <input type="text" name="nome_adicional" id="nomeAdicional" />
+
+          <label for="descricaoAdicional">Descrição</label>
+          <textarea
+            name="descricao"
+            id="descricaoAdicional"
+            rows="3"
+          ></textarea>
+
+          <label for="quantidadeAdicional">Quantidade (unidades)</label>
+          <input
+            type="number"
+            name="quantidade_adicional"
+            id="quantidadeAdicional"
+            min="0"
+          />
+
+          <label for="precoAdicional">Preço Unitário</label>
+          <input
+            type="number"
+            name="preco"
+            id="precoAdicional"
+            step="0.01"
+            min="0"
+          />
+        </div>
+
+        <menu>
+          <button type="submit" class="botaoPrimario">Cadastrar</button>
+          <button type="button" id="botaoCancelarModal">Cancelar</button>
+        </menu>
+      </form>
+    </dialog>
 
     <script src="../scripts/painelControle.js"></script>
   </body>

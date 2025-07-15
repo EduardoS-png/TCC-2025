@@ -623,25 +623,116 @@ footer {
   color: var(--cor-terciaria);
 }
 
-@media (max-width: 768px) {
-  body {
-    grid-template-columns: 1fr;
-    grid-template-rows: 70px 1fr 50px;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-  }
-  nav {
-    position: fixed;
-    top: 70px;
-    left: -15rem;
-    width: 15rem;
-    height: calc(100vh - 70px);
-    transition: var(--transicao);
-    z-index: 100;
-  }
-  nav.ativo {
-    left: 0;
-  }
+#modalCadastroProduto {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  border: none;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-media);
+  padding: 1.5rem;
+  z-index: 999;
+}
+
+#modalCadastroProduto::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+#modalCadastroProduto form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#modalCadastroProduto header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#modalCadastroProduto h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+#btnFecharModalProduto {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+#btnFecharModalProduto:hover {
+  color: #111827;
+}
+
+#modalCadastroProduto label {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+#modalCadastroProduto input,
+#modalCadastroProduto select,
+#modalCadastroProduto textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f9fafb;
+  transition: border 0.2s;
+}
+
+#modalCadastroProduto input:focus,
+#modalCadastroProduto select:focus,
+#modalCadastroProduto textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+}
+
+#modalCadastroProduto select:invalid {
+  color: #9ca3af;
+}
+
+#modalCadastroProduto menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+#modalCadastroProduto button {
+  padding: 0.6rem 1.2rem;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#modalCadastroProduto .botaoPrimario {
+  background: #3b82f6;
+  color: white;
+}
+
+#modalCadastroProduto .botaoPrimario:hover {
+  background: #2563eb;
+}
+
+#modalCadastroProduto .botaoSecundario {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+#modalCadastroProduto .botaoSecundario:hover {
+  background: #d1d5db;
 }
