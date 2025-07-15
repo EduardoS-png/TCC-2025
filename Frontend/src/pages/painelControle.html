@@ -119,19 +119,15 @@
           <h3 class="sessaoTitulo">Ações Rápidas</h3>
           <div class="acoesBotoes">
             <button class="botaoPrimario">
-              <span class="acaoIcone">➕</span>
+              <img src="../assets/icons/novo.svg" alt="" />
               Novos Pedidos
             </button>
             <button class="botaoPrimario">
-              <span class="acaoIcone"
-                ><img src="../assets/icons/pessoas.svg" alt="pessoas"
-              /></span>
+              <img src="../assets/icons/pessoas2.svg" alt="pessoas" />
               Novos Clientes
             </button>
             <button class="botaoPrimario">
-              <span class="acaoIcone"
-                ><img src="../assets/icons/relatorio.svg" alt="relatório"
-              /></span>
+              <img src="../assets/icons/papelBranco.svg" alt="relatório" />
               Relatório Diário
             </button>
           </div>
@@ -236,44 +232,69 @@
 
         <div class="controlesInventario">
           <button class="botaoPrimario">
-            <img src="" alt="" />Novo Produto
+            <img src="../assets/icons/novo.svg" alt="" />Novo Produto
           </button>
           <button class="botaoSecundario"><img src="" alt="" />Entrada</button>
           <button class="botaoSecundario"><img src="" alt="" />Saída</button>
+          <div class="filtrarOpcoes">
+            <select class="filtroSelecionar">
+              <option>Todos Status</option>
+              <option>Em Estoque</option>
+              <option>Baixo Estoque</option>
+              <option>Em Falta</option>
+            </select>
+          </div>
           <div class="pesquisaInvetario">
             <input type="text" placeholder="Buscar produtos..." />
             <button class="pesquisaBotao">
               <img src="../assets/icons/pesquisar.svg" alt="iconePesquisa" />
             </button>
           </div>
+          <button class="botaoSecundario">
+            <img src="" alt="" /> Exportar
+          </button>
         </div>
 
         <table class="tabelaInventario">
           <thead>
             <tr class="tabelaCabecalho">
-              <th class="cabecaColuna">Código</th>
-              <th class="cabecaColuna">Produto</th>
-              <th class="cabecaColuna">Quantidade</th>
-              <th class="cabecaColuna">Localização</th>
-              <th class="cabecaColuna">Status</th>
-              <th class="cabecaColuna">Ações</th>
+              <th>Código</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Status</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
             <tr class="linhaTabela">
               <td class="tabelaColuna">PROD001</td>
               <td class="tabelaColuna">Notebook Dell</td>
-              <td class="tabelaColuna">15</td>
-              <td class="tabelaColuna">Prateleira A3</td>
+              <td class="tabelaColuna">15 unidades</td>
               <td class="tabelaColuna">
-                <span class="status-badge in-stock">Em Estoque</span>
+                <span class="itemEstado emEstoque">Em Estoque</span>
               </td>
               <td class="tabelaColuna acoes">
-                <button class="botoesDecisao editar" title="Editar">
-                  <img src="" alt="" />
+                <button class="botoesDecisao" title="Editar">
+                  <img src="../assets/icons/editar.svg" alt="editar.png" />
                 </button>
-                <button class="botoesDecisao apagar" title="Excluir">
-                  <img src="" alt="" />
+                <button class="botoesDecisao" title="Excluir">
+                  <img src="../assets/icons/lixeira.svg" alt="apagar.png" />
+                </button>
+              </td>
+            </tr>
+            <tr class="linhaTabela">
+              <td class="tabelaColuna">PROD002</td>
+              <td class="tabelaColuna">Teclado Sem Fio</td>
+              <td class="tabelaColuna">65 unidades</td>
+              <td class="tabelaColuna">
+                <span class="itemEstado baixoEstoque">Baixo Estoque</span>
+              </td>
+              <td class="tabelaColuna acoes">
+                <button class="botoesDecisao" title="Editar">
+                  <img src="../assets/icons/editar.svg" alt="editar.png" />
+                </button>
+                <button class="botoesDecisao" title="Excluir">
+                  <img src="../assets/icons/lixeira.svg" alt="apagar.png" />
                 </button>
               </td>
             </tr>
