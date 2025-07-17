@@ -361,11 +361,15 @@ main {
   margin-bottom: 1rem;
 }
 
-.verTudo {
+#verTudo{
   font-size: 14px;
   color: var(--cor-primaria);
   cursor: pointer;
   text-decoration: underline;
+}
+
+#verTudo:hover{
+  color: var(--cor-secundaria);
 }
 
 .filtrarOpcoes {
