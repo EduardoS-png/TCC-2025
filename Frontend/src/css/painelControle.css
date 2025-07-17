@@ -458,20 +458,56 @@ main {
   color: var(--corTexto-inversa);
 }
 
-.inventarioCabecalho {
+#comprasCabecalho {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   margin-bottom: 1rem;
 }
 
-.caixaInventario {
+#caixaCompras {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.inventarioSurmario {
+#controlesCompras {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#tabelaCompras {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: var(--raio-borda);
+  overflow: hidden;
+  box-shadow: var(--sombra-pequena);
+}
+
+#tabelaCompras th,
+#tabelaCompras td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#inventarioCabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+#caixaInventario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#inventarioSumario {
   display: flex;
   gap: 1rem;
 }
@@ -502,14 +538,14 @@ main {
   border-left: 4px solid var(--cor-secundaria);
 }
 
-.controlesInventario {
+#controlesInventario {
   display: flex;
   gap: 0.8rem;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.pesquisaInvetario {
+.pesquisasModulos {
   margin-left: auto;
   display: flex;
   border: 1px solid #e5e7eb;
@@ -517,7 +553,7 @@ main {
   overflow: hidden;
 }
 
-.pesquisaInvetario input {
+.pesquisasModulos input {
   border: none;
   padding: 0.6rem 0.8rem;
   outline: none;
@@ -531,7 +567,7 @@ main {
   cursor: pointer;
 }
 
-.tabelaInventario {
+#tabelaInventario {
   width: 100%;
   border-collapse: collapse;
   background: white;
@@ -540,8 +576,8 @@ main {
   box-shadow: var(--sombra-pequena);
 }
 
-.tabelaInventario th,
-.tabelaInventario td {
+#tabelaInventario th,
+#tabelaInventario td {
   padding: 0.8rem 1rem;
   text-align: left;
   vertical-align: middle;
@@ -643,7 +679,11 @@ dialog::backdrop {
 }
 
 .modalCabecalho {
-  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+  background: linear-gradient(
+    90deg,
+    var(--cor-primaria),
+    var(--cor-secundaria)
+  );
   padding: 1rem 1.5rem;
   margin: -1.5rem -1.5rem 2rem -1.5rem;
   border-top-left-radius: var(--raio-borda);
@@ -657,6 +697,16 @@ dialog::backdrop {
   font-size: 24px;
   font-weight: 600;
   color: var(--corTexto-inversa);
+}
+
+.subtituloSecao {
+  grid-column: 1 / -1;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--cor-primaria);
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--cor-primaria);
+  padding-bottom: 0.3rem;
 }
 
 form#formCadastroProduto {

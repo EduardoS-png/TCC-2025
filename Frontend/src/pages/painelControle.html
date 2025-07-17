@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,11 +52,7 @@
           <img src="../assets/icons/carrinho.svg" alt="" />
           <span>Vendas</span>
         </a>
-        <a
-          href="../pages/estoque.html"
-          class="navLink"
-          data-destino="inventario"
-        >
+        <a href="#" class="navLink" data-destino="inventario">
           <img src="../assets/icons/estoque.svg" alt="estoque" />
           <span>Inventário</span>
         </a>
@@ -212,12 +208,63 @@
         </div>
       </section>
 
+      <!-- Compras -->
+      <section id="compras" style="display: none">
+        <div id="comprasCabecalho">
+          <div id="caixaCompras">
+            <h2 class="paginaTitulo">Compras</h2>
+          </div>
+        </div>
+
+        <div id="controlesCompras">
+          <button id="btnAbrirModalCompra" class="botaoPrimario">
+            <img src="../assets/icons/novo.svg" alt="novo.svg" />Nova Compra
+          </button>
+          <div class="pesquisasModulos">
+            <input
+              type="text"
+              placeholder="Buscar por fornecedor ou código..."
+              id="filtroCompras"
+              class="p"
+            />
+            <button class="pesquisaBotao">
+              <img src="../assets/icons/pesquisar.svg" alt="iconePesquisa" />
+            </button>
+          </div>
+          <div class="filtrarOpcoes">
+            <select class="filtroSelecionar">
+              <option value="">Todos os status</option>
+              <option value="pendente">Pendente</option>
+              <option value="recebido">Recebido</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </div>
+        </div>
+
+        <table id="tabelaCompras">
+          <thead>
+            <tr class="tabelaCabecalho">
+              <th>Código</th>
+              <th>Fornecedor</th>
+              <th>Data</th>
+              <th>Itens</th>
+              <th>Total (R$)</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="listaCompras">
+            <!-- As compras cadastradas serão inseridas aqui dinamicamente -->
+          </tbody>
+        </table>
+      </section>
+
       <!-- Estoque -->
       <section id="inventario" style="display: none">
-        <div class="inventarioCabecalho">
-          <div class="caixaInventario">
+        <div id="inventarioCabecalho">
+          <div id="caixaInventario">
             <h2 class="paginaTitulo">Inventário</h2>
-            <div class="inventarioSurmario">
+            <div id="inventarioSumario">
               <div class="sumarioEstado total">
                 <span>Produtos Totais</span>
                 <strong>287</strong>
@@ -234,7 +281,7 @@
           </div>
         </div>
 
-        <div class="controlesInventario">
+        <div id="controlesInventario">
           <button type="submit" id="botaoAbrirModal" class="botaoPrimario">
             <img src="../assets/icons/novo.svg" alt="" />Novo Produto
           </button>
@@ -248,7 +295,7 @@
               <option>Em Falta</option>
             </select>
           </div>
-          <div class="pesquisaInvetario">
+          <div class="pesquisasModulos">
             <input type="text" placeholder="Buscar produtos..." />
             <button class="pesquisaBotao">
               <img src="../assets/icons/pesquisar.svg" alt="iconePesquisa" />
@@ -259,7 +306,7 @@
           </button>
         </div>
 
-        <table class="tabelaInventario">
+        <table id="tabelaInventario">
           <thead>
             <tr class="tabelaCabecalho">
               <th>Código</th>
@@ -341,7 +388,8 @@
           <option value="adicional">Produto Adicional</option>
         </select>
 
-        <div class="grupoFormulario camposComuns">
+        <h3 class="subtituloSecao">Informações Gerais</h3>
+        <div class="grupoFormulario">
           <!-- Campos compartilhados -->
           <label for="codigoProduto">Código/SKU</label>
           <input type="text" id="codigoProduto" name="codigo" required />
@@ -357,9 +405,6 @@
 
           <label for="fornecedorProduto">Fornecedor</label>
           <input type="text" id="fornecedorProduto" name="fornecedor" />
-
-          <label for="localEstoque">Localização no Estoque</label>
-          <input type="text" id="localEstoque" name="local_estoque" />
 
           <label for="unidadeMedida">Unidade de Medida</label>
           <select id="unidadeMedida" name="unidade_medida">
@@ -397,6 +442,7 @@
 
         <!-- Linha -->
         <div class="grupoFormulario grupoTipo" id="formLinha" hidden>
+          <h3 class="subtituloSecao">Informações do Tipo</h3>
           <label for="corLinha">Cor</label>
           <input type="text" id="corLinha" name="cor_linha" />
 
@@ -409,6 +455,7 @@
 
         <!-- Tecido -->
         <div class="grupoFormulario grupoTipo" id="formTecido" hidden>
+          <h3 class="subtituloSecao">Informações do Tipo</h3>
           <label for="tipoTecido">Tipo (ex: algodão)</label>
           <input type="text" id="tipoTecido" name="tipo_tecido" />
 
@@ -430,6 +477,7 @@
 
         <!-- Produto Adicional -->
         <div class="grupoFormulario grupoTipo" id="formAdicional" hidden>
+          <h3 class="subtituloSecao">Informações do Tipo</h3>
           <label for="descricaoAdicional">Descrição</label>
           <textarea
             id="descricaoAdicional"
