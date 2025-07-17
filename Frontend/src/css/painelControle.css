@@ -321,7 +321,7 @@ main {
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: var(--transicao);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .botaoPrimario:hover {
@@ -339,7 +339,7 @@ main {
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: var(--transicao);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .botaoSecundario:hover {
@@ -624,13 +624,13 @@ footer {
 }
 
 dialog {
-  padding: 2rem;
+  padding: 1.5rem;
   border: none;
   border-radius: var(--raio-borda);
   box-shadow: var(--sombra-media);
   background: white;
   width: 100%;
-  max-width: 32rem;
+  max-width: 48rem;
   margin: auto;
   color: var(--cor-texto);
   transition: var(--transicao);
@@ -643,9 +643,20 @@ dialog::backdrop {
 }
 
 .modalCabecalho {
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+  padding: 1rem 1.5rem;
+  margin: -1.5rem -1.5rem 2rem -1.5rem;
+  border-top-left-radius: var(--raio-borda);
+  border-top-right-radius: var(--raio-borda);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.tituloModal {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--corTexto-inversa);
 }
 
 form#formCadastroProduto {
@@ -657,22 +668,97 @@ form#formCadastroProduto {
 form#formCadastroProduto label {
   font-weight: 500;
   font-size: 14px;
+  margin-bottom: 0.3rem;
+  color: var(--cor-texto);
+  display: block;
+}
+
+form#formCadastroProduto textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 250px;
+}
+
+.grupoFormulario {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+[hidden] {
+  display: none !important;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: all 0.3s ease;
 }
 
 form#formCadastroProduto input,
-form#formCadastroProduto select {
-  padding: 0.6rem 1rem;
+form#formCadastroProduto select,
+form#formCadastroProduto textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
   border-radius: var(--raio-borda);
-  border: 1px solid #ccc;
+  border: 1px solid #c7c3c3;
   font-size: 14px;
-  transition: var(--transicao);
+  transition: all 0.25s ease;
+  background: white;
+  color: var(--cor-texto);
+}
+
+form#formCadastroProduto .campo-longo {
+  grid-column: span 2;
+}
+
+form#formCadastroProduto input[type="date"] {
+  padding: 0.6rem 1rem;
+  font-size: 14px;
 }
 
 form#formCadastroProduto input:focus,
-form#formCadastroProduto select:focus {
+form#formCadastroProduto select:focus,
+form#formCadastroProduto textarea:focus {
   border-color: var(--cor-primaria);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(43, 18, 207, 0.1);
+  box-shadow: 0 0 0 3px rgba(43, 18, 207, 0.15);
+  transform: scale(1.02);
+  background-color: #f9f9ff;
+}
+
+#botaoFecharModal {
+  all: unset;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#botaoFecharModal img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#botaoCancelarModal {
+  padding: 0.8rem 1rem;
+  background: var(--cor-terciaria);
+  color: white;
+  border: none;
+  border-radius: var(--raio-borda);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transicao);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#botaoCancelarModal:hover {
+  background: var(--cor-apoio2);
+  color: var(--corTexto-inversa);
+}
+
+.botaoPrimario:active,
+.botaoSecundario:active,
+#botaoCancelarModal:active {
+  transform: scale(0.97);
 }
 
 menu {

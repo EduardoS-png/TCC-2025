@@ -320,17 +320,17 @@
       role="dialog"
     >
       <form id="formCadastroProduto" method="POST">
-        <header class="modalCabecalho">
-          <h2 class="paginaTitulo">Cadastrar Produto</h2>
+        <div class="modalCabecalho">
+          <h2 class="tituloModal">Cadastrar Produto</h2>
           <button
             type="button"
             aria-label="Fechar formulário"
             id="botaoFecharModal"
             class="botaoFecharModal"
           >
-            ×
+            <img src="../assets/icons/fechar.svg" alt="fechar.svg" />
           </button>
-        </header>
+        </div>
 
         <!-- Tipo do Produto -->
         <label for="tipoProduto">Tipo de Produto</label>
@@ -341,81 +341,101 @@
           <option value="adicional">Produto Adicional</option>
         </select>
 
-        <!-- Formulário para Linhas -->
-        <div class="grupoFormulario" id="formLinha" hidden>
-          <label for="nomeLinha">Nome da Linha</label>
-          <input type="text" name="nome_linha" id="nomeLinha" />
+        <div class="grupoFormulario camposComuns">
+          <!-- Campos compartilhados -->
+          <label for="codigoProduto">Código/SKU</label>
+          <input type="text" id="codigoProduto" name="codigo" required />
 
-          <label for="corLinha">Cor</label>
-          <input type="text" name="cor_linha" id="corLinha" />
+          <label for="nomeProduto">Nome do Produto</label>
+          <input
+            type="text"
+            id="nomeProduto"
+            name="nome"
+            class="campo-longo"
+            required
+          />
 
-          <label for="espessuraLinha">Espessura (ex: 120, 60)</label>
-          <input type="text" name="espessura" id="espessuraLinha" />
+          <label for="fornecedorProduto">Fornecedor</label>
+          <input type="text" id="fornecedorProduto" name="fornecedor" />
 
-          <label for="marcaLinha">Marca</label>
-          <input type="text" name="marca_linha" id="marcaLinha" />
+          <label for="localEstoque">Localização no Estoque</label>
+          <input type="text" id="localEstoque" name="local_estoque" />
 
-          <label for="quantidadeLinha">Quantidade (unidades)</label>
+          <label for="unidadeMedida">Unidade de Medida</label>
+          <select id="unidadeMedida" name="unidade_medida">
+            <option value="" disabled selected>Selecione</option>
+            <option value="un">Unidade</option>
+            <option value="m">Metro</option>
+            <option value="kg">Quilo</option>
+            <option value="rolo">Rolo</option>
+          </select>
+
+          <label for="quantidade">Quantidade</label>
+          <input type="number" id="quantidade" name="quantidade" min="0" />
+
+          <label for="precoCusto">Preço de Custo</label>
           <input
             type="number"
-            name="quantidade_linha"
-            id="quantidadeLinha"
+            id="precoCusto"
+            name="preco_custo"
+            step="0.01"
             min="0"
           />
-        </div>
 
-        <!-- Formulário para Tecidos -->
-        <div class="grupoFormulario" id="formTecido" hidden>
-          <label for="nomeTecido">Nome do Tecido</label>
-          <input type="text" name="nome_tecido" id="nomeTecido" />
-
-          <label for="tipoTecido">Tipo (ex: algodão, poliéster)</label>
-          <input type="text" name="tipo_tecido" id="tipoTecido" />
-
-          <label for="corTecido">Cor</label>
-          <input type="text" name="cor_tecido" id="corTecido" />
-
-          <label for="composicaoTecido">Composição</label>
-          <input type="text" name="composicao" id="composicaoTecido" />
-
-          <label for="metragemTecido">Metragem disponível</label>
+          <label for="precoVenda">Preço de Venda</label>
           <input
             type="number"
-            name="metragem"
+            id="precoVenda"
+            name="preco_venda"
+            step="0.01"
+            min="0"
+          />
+
+          <label for="dataEntrada">Data de Entrada</label>
+          <input type="date" id="dataEntrada" name="data_entrada" />
+        </div>
+
+        <!-- Linha -->
+        <div class="grupoFormulario grupoTipo" id="formLinha" hidden>
+          <label for="corLinha">Cor</label>
+          <input type="text" id="corLinha" name="cor_linha" />
+
+          <label for="espessuraLinha">Espessura</label>
+          <input type="text" id="espessuraLinha" name="espessura" />
+
+          <label for="marcaLinha">Marca</label>
+          <input type="text" id="marcaLinha" name="marca_linha" />
+        </div>
+
+        <!-- Tecido -->
+        <div class="grupoFormulario grupoTipo" id="formTecido" hidden>
+          <label for="tipoTecido">Tipo (ex: algodão)</label>
+          <input type="text" id="tipoTecido" name="tipo_tecido" />
+
+          <label for="corTecido">Cor</label>
+          <input type="text" id="corTecido" name="cor_tecido" />
+
+          <label for="composicaoTecido">Composição</label>
+          <input type="text" id="composicaoTecido" name="composicao" />
+
+          <label for="metragemTecido">Metragem</label>
+          <input
+            type="number"
             id="metragemTecido"
+            name="metragem"
             step="0.1"
             min="0"
           />
         </div>
 
-        <!-- Formulário para Produtos Adicionais -->
-        <div class="grupoFormulario" id="formAdicional" hidden>
-          <label for="nomeAdicional">Nome do Produto</label>
-          <input type="text" name="nome_adicional" id="nomeAdicional" />
-
+        <!-- Produto Adicional -->
+        <div class="grupoFormulario grupoTipo" id="formAdicional" hidden>
           <label for="descricaoAdicional">Descrição</label>
           <textarea
-            name="descricao"
             id="descricaoAdicional"
+            name="descricao"
             rows="3"
           ></textarea>
-
-          <label for="quantidadeAdicional">Quantidade (unidades)</label>
-          <input
-            type="number"
-            name="quantidade_adicional"
-            id="quantidadeAdicional"
-            min="0"
-          />
-
-          <label for="precoAdicional">Preço Unitário</label>
-          <input
-            type="number"
-            name="preco"
-            id="precoAdicional"
-            step="0.01"
-            min="0"
-          />
         </div>
 
         <menu>
