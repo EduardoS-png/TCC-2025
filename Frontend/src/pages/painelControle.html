@@ -57,14 +57,6 @@
           <span>Inventário</span>
         </a>
       </div>
-
-      <div class="navSessao">
-        <div class="navTitulo">Relátorios</div>
-        <a href="#" class="navLink" data-destino="analiticos">
-          <img src="../assets/icons/relatorio.svg" alt="relatório" />
-          <span>Analíticos</span>
-        </a>
-      </div>
     </nav>
 
     <!-- Contúdo Principal -->
@@ -211,9 +203,7 @@
       <!-- Compras -->
       <section id="compras" style="display: none">
         <div id="comprasCabecalho">
-          <div id="caixaCompras">
-            <h2 class="paginaTitulo">Compras</h2>
-          </div>
+          <h2 class="paginaTitulo">Compras</h2>
         </div>
 
         <div id="controlesCompras">
@@ -254,9 +244,117 @@
             </tr>
           </thead>
           <tbody id="listaCompras">
-            <!-- As compras cadastradas serão inseridas aqui dinamicamente -->
+            <tr class="linhaTabela">
+              <td class="tabelaColuna">PROD001</td>
+              <td class="tabelaColuna">Empresa Cardoso</td>
+              <td class="tabelaColuna">20/06/2026</td>
+              <td class="tabelaColuna">10 linhas</td>
+              <td>R$9.000</td>
+              <td class="tabelaColuna">
+                <span class="itemEstado emEstoque">Recebido</span>
+              </td>
+              <td class="tabelaColuna acoes">
+                <button class="botoesDecisao" title="Editar">
+                  <img src="../assets/icons/editar.svg" alt="editar.png" />
+                </button>
+                <button class="botoesDecisao" title="Excluir">
+                  <img src="../assets/icons/lixeira.svg" alt="apagar.png" />
+                </button>
+              </td>
+            </tr>
           </tbody>
         </table>
+      </section>
+
+      <!-- Vendas -->
+      <section id="vendas" style="display: none">
+        <div id="vendasCabecalho">
+          <div id="caixaVendas">
+            <h2 class="paginaTitulo">Vendas</h2>
+            <div id="vendasSumario">
+              <div class="sumarioEstado total">
+                <span>Total Vendido Hoje</span>
+                <strong>R$ 1.250,00</strong>
+              </div>
+              <div class="sumarioEstado realizadas">
+                <span>Vendas Realizadas</span>
+                <strong>287 vendas</strong>
+              </div>
+              <div class="sumarioEstado alerta">
+                <span>Fiado Pendente</span>
+                <strong>R$ 320,00</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="controlesCompras">
+          <button id="btnAbrirModalCompra" class="botaoPrimario">
+            <img src="../assets/icons/novo.svg" alt="novo.svg" />Nova Venda
+          </button>
+          <div class="pesquisasModulos">
+            <input
+              type="text"
+              placeholder="Buscar por fornecedor ou código..."
+              id="filtroVendas"
+              class="p"
+            />
+            <button class="pesquisaBotao">
+              <img src="../assets/icons/pesquisar.svg" alt="iconePesquisa" />
+            </button>
+          </div>
+          <div class="filtrarOpcoes">
+            <select class="filtroSelecionar">
+              <option value="">Todos os pagamentos</option>
+              <option value="dinheiro">Dinheiro</option>
+              <option value="cartao">Cartão</option>
+              <option value="pix">PIX</option>
+              <option value="fiado">Fiado</option>
+            </select>
+          </div>
+          <div class="filtrarOpcoes">
+            <select class="filtroSelecionar">
+              <option value="">Todos os status</option>
+              <option value="pendente">Pago</option>
+              <option value="recebido">Pendente</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- <table id="tabelaCompras">
+          <thead>
+            <tr class="tabelaCabecalho">
+              <th>Código</th>
+              <th>Fornecedor</th>
+              <th>Data</th>
+              <th>Itens</th>
+              <th>Total (R$)</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="listaCompras">
+            <tr class="linhaTabela">
+              <td class="tabelaColuna">PROD001</td>
+              <td class="tabelaColuna">Empresa Cardoso</td>
+              <td class="tabelaColuna">20/06/2026</td>
+              <td class="tabelaColuna">10 linhas</td>
+              <td>R$9.000</td>
+              <td class="tabelaColuna">
+                <span class="itemEstado emEstoque">Recebido</span>
+              </td>
+              <td class="tabelaColuna acoes">
+                <button class="botoesDecisao" title="Editar">
+                  <img src="../assets/icons/editar.svg" alt="editar.png" />
+                </button>
+                <button class="botoesDecisao" title="Excluir">
+                  <img src="../assets/icons/lixeira.svg" alt="apagar.png" />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table> -->
       </section>
 
       <!-- Estoque -->

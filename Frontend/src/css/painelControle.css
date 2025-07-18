@@ -465,12 +465,6 @@ main {
   margin-bottom: 1rem;
 }
 
-#caixaCompras {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 #controlesCompras {
   display: flex;
   gap: 0.8rem;
@@ -492,6 +486,24 @@ main {
   padding: 0.8rem 1rem;
   text-align: left;
   vertical-align: middle;
+}
+
+#vendasCabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+#caixaVendas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#vendasSumario {
+  display: flex;
+  gap: 1rem;
 }
 
 #inventarioCabecalho {
@@ -526,15 +538,19 @@ main {
   margin-top: 0.4rem;
 }
 
-.sumarioEstado.total {
+.total {
   border-left: 4px solid var(--cor-primaria);
 }
 
-.sumarioEstado.alerta {
+.alerta {
   border-left: 4px solid #f59e0b;
 }
 
-.sumarioEstado.perigo {
+.realizadas {
+  border-left: 4px solid #63e45f;
+}
+
+.perigo {
   border-left: 4px solid var(--cor-secundaria);
 }
 

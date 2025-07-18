@@ -9,7 +9,7 @@ const chaveEstado = "abaAtiva";
 const modalCadastro = document.getElementById("modalCadastroProduto");
 const botaoAbrirModal = document.getElementById("botaoAbrirModal");
 const botaoFecharModal = document.getElementById("botaoFecharModal");
-const botaoCancelarModal = document.getElementById("botaoFecharModal");
+const botaoCancelarModal = document.getElementById("botaoCancelarModal");
 
 // Variáveis de alteração do conteúdo do formulário
 const tipoProduto = document.getElementById("tipoProduto");
